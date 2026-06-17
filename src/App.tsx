@@ -915,10 +915,10 @@ export default function App() {
 function DashboardPage({ accounts, totals, usageStats, reloadUsage, usageRefreshing }: { accounts: AccountRow[]; totals: { hot: number; validQuota: number; tokenOnly: number; glm52: number; turbo: number }; usageStats: UsageStats | null; reloadUsage: () => Promise<void>; usageRefreshing: boolean }) {
   return (
     <div className="page-grid dashboard-grid">
-      <MetricCard label="账号总数" value={accounts.length} hint={`${totals.hot} 可热切换`} />
-      <MetricCard label="额度有效" value={totals.validQuota} hint={`${totals.tokenOnly} Token only`} />
-      <MetricCard label="GLM-5.2 剩余" value={fmtInt(totals.glm52)} hint="汇总" />
-      <MetricCard label="GLM-5-Turbo 剩余" value={fmtInt(totals.turbo)} hint="汇总" />
+      <MetricCard label="账号总数" value={accounts.length} />
+      <MetricCard label="额度有效" value={totals.validQuota} />
+      <MetricCard label="GLM-5.2 剩余" value={fmtInt(totals.glm52)} />
+      <MetricCard label="GLM-5-Turbo 剩余" value={fmtInt(totals.turbo)} />
       <UsageStatsSection stats={usageStats} reloadUsage={reloadUsage} usageRefreshing={usageRefreshing} />
     </div>
   );
