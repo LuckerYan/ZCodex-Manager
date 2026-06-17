@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { invoke } from "@tauri-apps/api/core";
 import { save, open, ask } from "@tauri-apps/plugin-dialog";
+import { openUrl } from "@tauri-apps/plugin-opener";
 import "./App.css";
 
 type ModelQuota = {
@@ -41,6 +42,8 @@ type AuthStart = {
   expires_at: number;
   poll_interval_sec: number;
 };
+
+const GITHUB_REPO_URL = "https://github.com/LuckerYan/ZCodex-Manager";
 
 type ZcodeStatus = {
   zcode_v2_dir: string;
@@ -1360,15 +1363,28 @@ function SettingsPage({
 }
 
 function AboutPage() {
+  const openGithub = () => {
+    void openUrl(GITHUB_REPO_URL);
+  };
+
   return (
     <article className="about-article">
       <header className="about-hero">
+        <p className="eyebrow">About ZCode Manager</p>
         <h2>ZCode 管理器</h2>
         <p>
           一个用于管理多个 ZCode（Z.ai Coding Plan）账号的桌面工具：集中保存账号凭证、查询与刷新各账号额度，
           并支持在不重启 ZCode 的前提下「热切换」当前生效账号。
         </p>
       </header>
+
+      <section className="github-card" aria-label="GitHub 仓库支持">
+        <span className="github-kicker">Open Source</span>
+        <div className="github-title-row">
+          <h3>喜欢这个工具的话，欢迎去 GitHub 点一个 Star</h3>
+          <button type="button" onClick={openGithub}>查看仓库</button>
+        </div>
+      </section>
 
       <section>
         <h3>核心功能</h3>

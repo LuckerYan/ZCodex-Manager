@@ -82,6 +82,12 @@ h2 { margin-bottom: 8px; font-size: 1.05rem; font-weight: 600; letter-spacing: -
 .about-article section:first-of-type h3 { margin-top: 6px; }
 .about-article p { color: var(--muted); margin: 0 0 6px; }
 .about-article code { background: rgba(255,255,255,.06); border: 1px solid var(--line); border-radius: 5px; padding: 1px 6px; font-size: .82rem; }
+.github-card { position: relative; display: grid; gap: 14px; margin: 0 0 28px; padding: 22px 24px; border: 1px solid var(--line-hover); border-radius: 14px; background: linear-gradient(135deg, rgba(255,255,255,.075), rgba(255,255,255,.025)); overflow: hidden; }
+.github-card::before { content: "★"; position: absolute; right: 22px; top: -32px; color: rgba(255,255,255,.045); font-size: 112px; line-height: 1; pointer-events: none; }
+.github-title-row { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+.github-title-row h3 { margin: 0; font-size: 1.16rem; line-height: 1.25; }
+.github-title-row button { min-height: 36px; padding: 0 1.2rem; flex: 0 0 auto; }
+.github-kicker { position: relative; z-index: 1; display: inline-flex; width: fit-content; border: 1px solid rgba(255,255,255,.14); border-radius: 999px; padding: 2px 9px; color: var(--text); background: rgba(255,255,255,.055); font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
 .about-list { margin: 6px 0 0; padding-left: 20px; color: var(--muted); }
 .about-list li { margin: 5px 0; }
 .about-list strong { color: var(--text); }
@@ -293,6 +299,8 @@ h2 { margin-bottom: 8px; font-size: 1.05rem; font-weight: 600; letter-spacing: -
   .settings-hero, .settings-layout { grid-template-columns: 1fr; flex-direction: column; }
   .switch-card { width: 100%; flex-basis: auto; }
   .settings-panel.monitor { position: static; }
+  .github-title-row { align-items: flex-start; flex-direction: column; }
+  .github-title-row button { width: 100%; }
   .span-2, .dashboard-grid .hero-panel { grid-column: span 1; }
   .usage-board { padding: 24px 18px 70px; }
   .usage-head { align-items: start; flex-direction: column; }
