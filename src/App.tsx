@@ -1425,8 +1425,8 @@ function AboutPage() {
   );
 }
 
-function MetricCard({ label, value, hint }: { label: string; value: string | number; hint: string }) {
-  return <section className="metric-card"><span>{label}</span><strong>{value}</strong><small>{hint}</small></section>;
+function MetricCard({ label, value, hint }: { label: string; value: string | number; hint?: string }) {
+  return <section className="metric-card"><span>{label}</span><strong>{value}</strong>{hint && <small>{hint}</small>}</section>;
 }
 
 function Empty({ text }: { text: string }) {
